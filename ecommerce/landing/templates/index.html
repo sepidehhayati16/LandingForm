@@ -175,6 +175,10 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
+                        <form>
+                            {% csrf_token %}
+                            {{ form }}
+                        </form>
                         <form method="post" action="/landing/sendMessage/" id="contactForm" data-sb-form-api-token="API_TOKEN">
                             {% csrf_token %}
                             <!-- Name input-->

@@ -1,10 +1,13 @@
 from django.shortcuts import render , redirect
 from . import models
 from django.contrib import messages
+from . import form
+
 
 # Create your views here.
 def landing(request):
-    return render(request, 'index.html')
+    form1 = form.LandingForm()
+    return render(request, 'index.html',context={'form': form1})
 def sendMessage(request):
     if request.method == 'POST':
         name = request.POST.get('name')
